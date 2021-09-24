@@ -33,7 +33,7 @@
       "mark": {"type": "geoshape"},
       "encoding": {
         "color": {
-          "field": "sum_suicide",
+          "field": "Suicide_Rate",
           "type": "quantitative",
           "scale": {
             "type": "threshold",
