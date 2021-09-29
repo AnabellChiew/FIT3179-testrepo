@@ -1,0 +1,13 @@
+age,sex,suicide rate
+15 to 24,female,4.31
+15 to 24,male,13.74
+25 to 34,female,4.53
+25 to 34,male,20.1
+35 to 54,female,5.93
+35 to 54,male,24.55
+5 to 14,female,0.47
+5 to 14,male,0.8
+55 to 74,female,6.99
+55 to 74,male,25.57
+75+,female,9.72
+75+,male,38.07
