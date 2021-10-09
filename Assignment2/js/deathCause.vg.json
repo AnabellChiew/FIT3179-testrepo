@@ -13,7 +13,7 @@
     {"filter": "datum.Year == Select_Year"}
   ],
   "encoding": {
-    "y": {"field": "variable", "sort": "-x"},
+    "y": {"field": "variable", "sort": "-x","title":"Cause of Death"},
     "x": {
       "aggregate": "sum",
       "field": "value",
