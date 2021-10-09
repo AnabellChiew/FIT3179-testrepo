@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Global Victim's Age Group and Sex",
+  "width":500,
+  "height":400,
+  "data": {"url": "https://raw.githubusercontent.com/AnabellChiew/FIT3179-testrepo/main/Assignment2/data/suicideRateByGenderAge.csv"},
+  "mark": "bar",
+  "params": [
+  {
+    "name": "Sex_Selection",
+    "bind": {
+      "input": "select",
+      "options": [
+        null,
+        "female",
+        "male"
+      ],
+      "labels": [
+        "Show All",
+        "Female",
+        "Male"
+      ],
+      "name": "Sex Selection: "
+    }
+  }
+],
+"transform": [{ "filter": "Sex_Selection == null || datum.sex == Sex_Selection" }],
+"encoding": {
+    "x": {
+      "field": "age",
+      "type": "ordinal",
+      "title": "Age Group",
+      "axis":{"labelAngle":0},
+      "sort":["5 to 14","15 to 24","25 to 34","35 to 54","55 to 74","75+"]
+    },
+    "y": {
+      "field": "suicide rate",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "sex",
+      "type": "nominal",
+      "scale": {
+        "domain": ["male", "female"],
+        "range": [ "#1f77b4", "#9467bd"]
+      },
+      "title": "Suicide Rate"
+    },
+    "tooltip": [
+      {
+        "field": "suicide rate",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Suicide Rate"
+      },
+      {
+        "field": "sex",
+        "type": "ordinal",
+        "title": "Sex"
+      }
+      
+    ]
+  }
+}
