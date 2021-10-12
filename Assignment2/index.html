@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global Suicide Rate</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+<body>
+
+ <div class="page">
+     <div>
+        <h1 style="text-align: center;font-family: Times New Roman, Times, serif;font-size: 200dp;">Global Suicide Rate from 1990 to 2015</h1>
+        <p style="text-align: center; font-style: italic;font-family: Times New Roman, Times, serif">A visualisation by Anabell Chiew</p>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+            <h2>Introduction</h2>
+            <p style="text-align: justify;">
+                Suicides is one of the main cause of death every year. Globally, Close to 800,000 people die from suicide every year which means that estimately every 40 seconds one person dies from suicide. Suicide is a death sentence caused by an individual who deliberately injures themselves with the intent to kill themselves. Factors that can increase a person's risk for suicide include being sexually assaulted or physically abused, being a victim of domestic violence, and being unemployed. Being able to access mental health care can also help lower a person's chances of committing suicide.
+            </p>
+            <p>(Ritchie et al., 2015)</p>
+        </div>
+    </div>
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="vis1" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <p style="text-align: justify;">
+                The bar chart shows the number of deaths by different causes. From this bar chart, we can see that suicide is one of the main cause of deaths globally throughout the years. For better understanding of the chart, the bar for suicides is highlighted in blue.
+            </p>
+            <p style="text-align: justify;">
+                Due to the prevalence of the stigma associated with suicide, and the fact that it's illegal in some countries, this figure is likely to be underestimated.
+            </p>
+            <p style="text-align: justify;">
+                To see the cause of the number of deaths in different years. Please use the slider to navigate through the years.
+            </p>
+          </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2>Trend of Suicide Rate</h2>
+            <p style="text-align: justify;">
+                The line chart shows the global average suicide rate from 1990 to 2015. From this line chart, we can see that from 1990 to 1995 the global average suicide rate increases and decreases from 1995 to 2015. 
+            </p>
+            <p style="text-align: justify;">
+                Due to missing data from countries, the average suicide rate can be inaccurate. The dataset was obtained from Kaggle.
+            </p>
+            <p style="text-align: justify;">
+                The actual number for average suicide rate per year can be access by the tooltip on the line chart.
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="vis2" class="vis-container">
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-1">
+          <h2> Comparing Countries Suicide Rate</h2>
+          <p>The map below shows the suicide rate of different countries. From the map, we can see that Greenland has the highest suicide rate over the years. Note down there are some missing data for some countries due to limitations.</p>
+          <p>The Select_Year slider can be used to explore the suicide rate for each country from 1990 to 2015.</p>
+        </div>
+      </div>
+    
+    
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="vis3" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2>Generation Of Suicidal Victims</h2>
+            <p style="text-align: justify;">
+                From the bar chart below, we can see that the Silent generation has the highest suicide rate and from the area chart we can see that 1995 has the highest suicide rate and the generation that has the highest suicide rate during 1995 is G.I. Generation.
+            </p>
+            <p style="text-align: justify;">
+                To explore the suicide rate for each generation, you can click on each bar corresponds to the generation. You will be able to view the trend of the suicide rate of that respective generation by doing so.
+            </p>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+            <div class="description description-left">
+                <h2>Age Group and Gender Of Suicidal Victims</h2>
+                <p style="text-align: justify;">
+                    From the staked bar chart below, we can see that the age group that committed suicide the most is the 75+ age group. From this graph, we can also see that averagely man suicide more than women.
+                </p>
+                <p style="text-align: justify;">
+                    To explore the suicide rate for each gender, you can click on the gender in the drop down menu. You will be able to data respective to the gender selected.
+                </p>
+              </div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+            <div id="vis4" class="vis-container"></div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="vis5" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <div class="pure-g">
+      <div class="pure-u-1-1 small-font">
+        <p>This visualisation is created by <a href="https://github.com/AnabellChiew/FIT3179-testrepo/tree/main/Assignment2" target="_blank">Anabell Chiew</a>.</p>
+        <p>Centers for Disease Control and Prevention. (2021). <i>Facts about suicide</i>. https://www.cdc.gov/suicide/facts/index.html</p>
+        <p>Ritchie, H., Roser, M., & Ortiz-Ospina, E. (2015). <i>Suicide</i>. Our World in Data. https://ourworldindata.org/suicide</p>
+        <p>Rusty. (2018). <i>Suicide Rates Overview 1985 to 2016</i>. Kaggle. https://www.kaggle.com/russellyates88/suicide-rates-overview-1985-to-2016</p>
+        <p>Seattle weather exploration. (n.d.). <i>Vega-Lite</i>. https://vega.github.io/vega-lite/examples/interactive_seattle_weather.html</p>
+        <p>Seattle weather exploration. (n.d.). <i>Vega-Lite</i>. https://vega.github.io/vega-lite/examples/interactive_seattle_weather.html</p>
+      </div>
+    </div>
+
+    
+  
+
+  </div> <!-- end page -->
+   
+<script type="text/javascript">
+  var specVis1 = "js/deathCause.vg.json";
+  var specVis2= "js/line_chart.vg.json";
+  var specVis3 = "js/map.vg.json";
+  var specVis4 = "js/stacked_area_chart.vg.json";
+  var specVis5 = "js/stacked_bar_chart.vg.json";
+
+  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis3', specVis3, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis4', specVis4, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  vegaEmbed('#vis5', specVis5, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+</body>
+</html>
