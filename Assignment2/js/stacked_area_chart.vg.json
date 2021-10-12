@@ -1,0 +1,106 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {"text": "Generation Of Suicidal Victims", "anchor": "middle"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/AnabellChiew/FIT3179-testrepo/main/Assignment2/data/suicideRateByGenerationYear.csv"
+  },
+  "vconcat": [
+    {
+      "encoding": {
+        "color": {
+          "condition": {
+            "param": "brush",
+            "title": "Generation Type",
+            "field": "generation",
+            "type": "nominal",
+            "scale": {
+              "domain": ["Silent", "Boomers", "Generation X", "G.I. Generation", "Millenials","Generation Z"],
+              "scheme": "tableau20"
+            }
+          },
+          "value": "lightgray"
+        },
+        "x": {
+          "scale": {"padding": 0.2},
+          "field": "year",
+          "axis": {"title": "Year", "labelAngle": 70}
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "suicide rate",
+          "title": "Suicide Rate"
+        }
+      },
+      "width": 350,
+      "height": 300,
+      "mark": {"type": "area", "tooltip": true},
+      "params": [{
+        "name": "brush",
+        "select": {"type": "interval", "encodings": ["x"]}
+      }],
+      "transform": [{"filter": {"param": "click"}}]
+    },
+    {
+      "layer":[
+      {
+        "encoding": {
+          "color": {
+            "condition": {
+              "param": "click",
+              "field": "generation",
+              "scale": {
+                "domain": ["Silent", "Boomers", "Generation X", "G.I. Generation", "Millenials","Generation Z"]
+              }
+            },
+            "value": "lightgray"
+          },
+          "x": {
+            "aggregate": "sum",
+            "field": "suicide rate",
+            "title": "Suicide Rate",
+            "axis": {"grid": false}
+          },
+          "y": {"title": "Generation", 
+           "sort": "-x", "field": "generation"},
+           "tooltip":[
+             {
+              "field": "generation",
+              "type": "nominal",
+              "title": "Generation"
+            },
+            {
+              "aggregate": "sum",
+              "field": "suicide rate",
+              "title": "Suicide Rate"
+            }
+           ]
+        },
+        "width": 350,
+        "mark": {"type": "bar"},
+        "params": [{
+        "name": "click",
+        "select": {"type": "point", "encodings": ["color"]}
+        }],
+        "transform": [{"filter": {"param": "brush"}}]
+      },
+      {
+      "mark": {
+            "type": "text",
+            "align": "left",
+            "dx": 40,
+            "dy": 10,
+            "text": ["Silent Generation","has the highest","suicide rate"],
+            "fontSize":10
+          },
+      "encoding": {
+        "color": {"value": "black"},
+        "opacity":{
+          "condition": {"test": "datum['year'] == '1990'", "value": 1},
+          "value": 0
+        }
+      }
+    }
+    ]
+    }
+  ]
+}
