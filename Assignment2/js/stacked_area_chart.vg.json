@@ -23,7 +23,7 @@
         "x": {
           "scale": {"padding": 0.2},
           "field": "year",
-          "axis": {"title": "Year", "labelAngle": 70}
+          "axis": {"title": "Year", "labelAngle": 30}
         },
         "y": {
           "aggregate": "sum",
@@ -31,7 +31,7 @@
           "title": "Suicide Rate"
         }
       },
-      "width": 350,
+      "width": 542,
       "height": 300,
       "mark": {"type": "area", "tooltip": true},
       "params": [{
@@ -75,7 +75,7 @@
             }
            ]
         },
-        "width": 350,
+        "width": 542,
         "mark": {"type": "bar"},
         "params": [{
         "name": "click",
@@ -87,7 +87,7 @@
       "mark": {
             "type": "text",
             "align": "left",
-            "dx": 40,
+            "dx": 80,
             "dy": 10,
             "text": ["Silent Generation","has the highest","suicide rate"],
             "fontSize":10
