@@ -33,7 +33,7 @@
       {
         "field": "variable",
         "type": "nominal",
-        "title": "Death Causes"
+        "title": "Cause of Death"
       },
       {
         "field": "value",
